@@ -48,8 +48,7 @@ body {
   line-height: 1.6;
   background-image: linear-gradient(to right bottom, var(--color-Primary-light), var(--color-Primary-dark));
   background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh; }
+  background-repeat: no-repeat; }
 
 .container {
   max-width: 120rem;
@@ -96,8 +95,11 @@ body {
   margin-right: 4rem; }
 
 .user-reviews {
-  background-color: green;
-  flex: 1; }
+  flex: 1;
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
 
 .logo {
   height: 3.25rem;
@@ -334,3 +336,60 @@ body {
     border: 3px solid white; }
     .recommend__photo:not(:last-child) {
       margin-right: -2rem; }
+
+.review {
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.6);
+  padding: 3rem;
+  margin-bottom: 3rem; }
+  .review::before {
+    content: "\201C";
+    position: absolute;
+    top: -1rem;
+    left: -2.5rem;
+    font-size: 20rem;
+    line-height: 1;
+    color: var(--color-Grey-light-4);
+    z-index: 1; }
+  .review__text {
+    position: relative;
+    margin-bottom: 2rem;
+    z-index: 2; }
+  .review__user {
+    display: flex;
+    align-items: center; }
+    .review__user-photo {
+      height: 4rem;
+      width: 4rem;
+      border-radius: 50%;
+      margin-right: 1rem; }
+    .review__user-box {
+      margin-right: auto; }
+    .review__user-name {
+      font-size: 1.2rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      margin-bottom: .4rem; }
+    .review__user-date {
+      font-size: 1rem;
+      color: var(--color-Grey-dark-2); }
+    .review__user-rating {
+      color: var(--color-Primary);
+      font-size: 2rem; }
+
+.cta {
+  padding: 3.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-size: 300; }
+
+.btn {
+  margin-top: 1rem;
+  border: none;
+  border-radius: 3rem;
+  width: 15rem;
+  height: 4rem;
+  color: white;
+  background-image: linear-gradient(to right bottom, var(--color-Primary-light), var(--color-Primary-dark)); }
