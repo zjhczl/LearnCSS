@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #ccc;
+    padding: 2rem;
+    display: flex;
+    // 主轴方向
+    flex-direction: row;
+    // 控制内部元素沿主轴定位
+    justify-content: center;
+    //控制行与行的定位
+    align-content: center;
+    //控制元素在主轴对其 
+    align-items: center;
+    //使容器内部元素自动换行
+    flex-wrap: wrap;
+}
+
+.item {
+    background-color: pink;
+    padding: 3rem;
+    //item之间的间距
+    margin: 3rem;
+    color: #fff;
+}
+
+.i2 {
+    //元素生长，占据空间,等于  flex:1
+    flex-grow: 1;
+    //font-size: 7rem;
+    //覆盖容器align-items属性 
+    align-self: flex-end;
+    //控制排列的顺序
+    order: -1;
+    //占据容器的宽度 
+    flex-basis: 20%;
+    //控制元素收缩 为0时不能收缩 
+    flex-shrink: 1;
+}
+
+.i4 {
+    height: 20rem;
+    //flex-grow:0 flex-shrink:0 flex-basis:30rem
+    flex: 0 0 30rem;
+}
