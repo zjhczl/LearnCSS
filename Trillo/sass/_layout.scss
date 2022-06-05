@@ -6,20 +6,32 @@
     background-color: var(--color-Grey-light-1);
     //x方向 y方向 模糊度 颜色
     box-shadow: var(--shadow-dark);
+    @media only screen and (max-width: $bp-largest) {
+        margin: 0;
+        max-width: 100%;
+        width: 100%;
+    }
 }
 
 .header {
     font-size: 1.4rem;
-    height: 7rem;
+    //height: 7rem;
     background-color: white;
     border-bottom: 1px solid var(--color-Grey-light-2);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media only screen and (max-width: $bp-smallest) {
+        flex-wrap: wrap;
+        margin-bottom: 2rem;
+    }
 }
 
 .content {
     display: flex;
+    @media only screen and (max-width: $bp-medium) {
+        flex-direction: column;
+    }
 }
 
 .sidebar {
@@ -42,6 +54,12 @@
     padding: 4rem 4rem;
     background-color: var(--color-Grey-light-1);
     border-bottom: 1px solid var(--color-Grey-light-2);
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem;
+    }
+    @media only screen and (max-width: $bp-small) {
+        flex-direction: column;
+    }
 }
 
 .description {
@@ -51,6 +69,14 @@
     padding: 3rem;
     flex: 0 0 60%;
     margin-right: 4rem;
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem;
+        margin-right: 2rem;
+    }
+    @media only screen and (max-width: $bp-small) {
+        margin-right: 0;
+        margin-bottom: 3rem;
+    }
 }
 
 .user-reviews {

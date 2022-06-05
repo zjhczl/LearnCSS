@@ -10,6 +10,11 @@
     align-content: center;
     //控制元素在主轴对其  
     align-items: center;
+    @media only screen and (max-width: $bp-smallest) {
+        order: 1;
+        flex: 0 0 100%;
+        align-content: center;
+    }
     &__input {
         width: 90%;
         font-family: inherit;
@@ -25,6 +30,9 @@
             outline: none;
             width: 100%;
             background-color: var(--color-Grey-light-3);
+        }
+        @media only screen and (max-width: $bp-smallest) {
+            width: 100%;
         }
     }
     &__input::-webkit-input-placeholder {
@@ -101,12 +109,22 @@
     font-size: 1.4rem;
     list-style: none;
     margin-top: 3.5rem;
+    @media only screen and (max-width: $bp-medium) {
+        display: flex;
+        margin: 0;
+    }
     &__icon {
         width: 1.75rem;
         height: 1.75rem;
         margin-right: 2rem;
         //父元素的color
         fill: currentColor;
+        @media only screen and (max-width: $bp-small) {
+            margin-right: 0;
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-bottom: .7rem;
+        }
     }
     &__item::before {
         content: '';
@@ -146,6 +164,14 @@
         align-items: center;
         position: relative;
         z-index: 2;
+        @media only screen and (max-width: $bp-medium) {
+            justify-content: center;
+        }
+        @media only screen and (max-width: $bp-small) {
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+        }
     }
 }
 
@@ -154,6 +180,9 @@
     color: var(--color-Grey-light-4);
     text-align: center;
     padding: 2.5rem;
+    @media only screen and (max-width: $bp-medium) {
+        display: none;
+    }
 }
 
 .gallery {
@@ -176,6 +205,10 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         padding: 1.5rem;
+        @media only screen and (max-width: $bp-small) {
+            font-size: 1.8rem;
+            padding: 1rem;
+        }
     }
     &__stars {
         display: flex;
@@ -205,6 +238,9 @@
         align-items: center;
         align-self: stretch;
         padding: 0 1rem;
+        @media only screen and (max-width: $bp-small) {
+            font-size: 1.5rem;
+        }
     }
     &__rating-average {
         margin-top: .5rem;
@@ -290,7 +326,9 @@
     &__count {
         margin-right: auto;
     }
-    &__friends {}
+    &__friends {
+        display: flex;
+    }
     &__photo {
         box-sizing: content-box;
         width: 4rem;
