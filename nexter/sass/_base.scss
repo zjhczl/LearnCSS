@@ -11,6 +11,10 @@ $font-primary: 'Nunito',
 sans-serif;
 $font-display: 'Josefin Sans',
 sans-serif;
+//break point
+$bp-largest:75em;
+$bp-large:62.5em;
+$bp-medium:50em;
 *,
 *::before,
 *::after {
@@ -22,6 +26,9 @@ sans-serif;
 html {
     box-sizing: border-box;
     font-size: 62.5%; //1rem = 10px
+    @media only screen and (max-width: $bp-largest) {
+        font-size: 50%;
+    }
 }
 
 body {
@@ -35,6 +42,13 @@ body {
     display: grid;
     grid-template-rows: 80vh auto 40vw repeat(3, min-content);
     grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(auto, 14rem)[col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+    @media only screen and (max-width: $bp-large) {
+        grid-template-rows: 6rem 80vh auto 40vw repeat(3, min-content);
+        grid-template-columns: [sidebar-start] 0rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(auto, 14rem)[col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+    }
+    @media only screen and (max-width: $bp-medium) {
+        grid-template-rows: 6rem 80vh auto auto 40vw repeat(3, min-content);
+    }
     &>* {
         //font-size: 5rem;
     }

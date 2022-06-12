@@ -4,11 +4,14 @@
     background-image: linear-gradient(rgba($color-secondary, .8), rgba($color-secondary, .8)), url(../img/hero.jpeg);
     background-position: center;
     display: grid;
-    grid-template-rows: 1fr min-content 6rem 1fr;
-    grid-template-columns: max-content;
+    grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
+    grid-template-columns: minmax(min-content, max-content);
     grid-row-gap: 1.5rem;
     padding: 8rem;
     justify-content: center;
+    @media only screen and (max-width: $bp-medium) {
+        grid-column: full-start / full-end;
+    }
     &__logo {
         height: 3rem;
     }
@@ -33,7 +36,8 @@
         grid-column-gap: 2rem;
         justify-content: center;
         img {
-            height: 2.5rem;
+            max-height: 2.5rem;
+            max-width: 100%;
             //使图像变暗 
             filter: brightness(70%);
         }
